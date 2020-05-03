@@ -1,10 +1,12 @@
 pipeline {
-    agent { docker { image 'python:3.6.9' } }
-    stages {
-        stage('build') {
-            steps {
-                sh 'python --version'
-            }
-        }
-    }
+   agent { dockerfile true }
+
+   stages {
+      stage('Tests') {
+         steps {
+            sh 'python pytest'
+            step([$class: 'XUnitBuilder', thresholds: [[$class: 'FailedThreshold', unstableThreshold: '1']], tools: [[$class: 'XUnitDotNetTestType', pattern: '*results_xunit.xml']]])
+         }
+      }
+   }
 }
