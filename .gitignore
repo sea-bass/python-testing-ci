@@ -1,0 +1,7 @@
+# Folder names to ignore
+**/.virtualenvs/
+**/.pytest_cache/
+**/__pycache/
+
+# File types to ignore
+*.pyc
