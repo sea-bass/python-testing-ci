@@ -4,7 +4,7 @@ pipeline {
    stages {
       stage('Tests') {
          steps {
-            sh 'python3 -m pytest'
+            bash 'pytest'
             step([$class: 'XUnitBuilder', thresholds: [[$class: 'FailedThreshold', unstableThreshold: '1']], tools: [[$class: 'XUnitDotNetTestType', pattern: '*results_xunit.xml']]])
          }
       }
