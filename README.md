@@ -62,4 +62,6 @@ docker cp <containerId>:/app/latest_test_results.html ./latest_test_results.html
 where `<containerId>` is the ID of the container you can get by running `docker ps` and copying the ID that shows up.
 
 ### Setting up Continuous Integration with Jenkins
-COMING SOON!
+A Jenkinsfile is included with this repository. This is set up to run `pytest` and then get the collected JUnit style XML for display on Jenkins.
+
+Most of the setup for this part is done in Jenkins itself, so refer to the blog post (COMING SOON) for more information.

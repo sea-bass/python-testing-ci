@@ -11,7 +11,7 @@ pipeline {
 
    post {
        always {
-           junit 'latest_test_results_xunit.xml'
+           junit 'latest_test_results.xml'
        }
    }
 }
