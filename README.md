@@ -45,6 +45,12 @@ docker run -it testing-ci
 Once you're there, you can run all the tests in this repository as shown in the following section.
 
 ## Running Tests
+First, you can use Flake8 to check the code against the PEP8 coding style.
+
+```
+flake8 --format=html --htmldir=. matrix_tools/basic_utils.py 
+```
+
 We are using the PyTest module to run our tests. All you need to do is go to the root of this repository and run the following line.
 
 ```

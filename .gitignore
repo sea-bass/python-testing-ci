@@ -2,6 +2,7 @@
 **/.virtualenvs/
 **/.pytest_cache/
 **/__pycache/
+**/flake-report/
 
 # File types to ignore
 *.pyc
