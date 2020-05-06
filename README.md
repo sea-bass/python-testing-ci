@@ -4,7 +4,7 @@ Sebastian Castro, 2020
 This repository shows a few examples of testing and continuous integration (CI) using Python. Testing is done using the [PyTest](https://docs.pytest.org/en/latest/) package. Then, we create a Docker image and integrate this into the [Jenkins](https://www.jenkins.io/) CI tool.
 
 Refer to the following blog posts for more information.
-* Post 1 on pip, virtual environments, and pytest -- COMING SOON
+* Post 1 on Flake8 and pytest -- COMING SOON
 * Post 2 on Docker and Jenkins -- COMING SOON
 
 ## Setup
@@ -45,7 +45,7 @@ docker run -it testing-ci
 Once you're there, you can run all the tests in this repository as shown in the following section.
 
 ## Running Tests
-First, you can use Flake8 to check the code against the PEP8 coding style. For example, to check the `matrix_tools/basic_utils.py` source file:
+First, you can use [Flake8](https://flake8.pycqa.org/en/latest/) to check the code against the PEP8 coding style. For example, to check the `matrix_tools/basic_utils.py` source file:
 
 ```
 flake8 --format=html --htmldir=flake-report matrix_tools/basic_utils.py 

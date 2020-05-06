@@ -46,14 +46,15 @@ class TestMatrixTools:
         assert(np_ver == "1.17.0")
         print("Correct NumPy version found: " + np_ver)
 
-    # @pytest.mark.parametrize("a,b,expected",[(a1,b1,expected1),(a2,b2,expected2)])
-    # def test_addition_exact(self,a,b,expected):
-    #     """
-    #     Tests the addition of 2 matrices by exact comparison
-    #     """
-    #     actual = add_matrices(a,b)
-    #     assert((expected == actual).all())
-    #     print("Matrices are exactly equal")
+    @pytest.mark.skip(reason="Not using exact matrix comparison")
+    @pytest.mark.parametrize("a,b,expected",[(a1,b1,expected1),(a2,b2,expected2)])
+    def test_addition_exact(self,a,b,expected):
+        """
+        Tests the addition of 2 matrices by exact comparison
+        """
+        actual = add_matrices(a,b)
+        assert((expected == actual).all())
+        print("Matrices are exactly equal")
 
     @pytest.mark.parametrize("a,b,expected",[(a1,b1,expected1),(a2,b2,expected2),(a3,b3,expected3)])
     def test_addition_close(self,a,b,expected):

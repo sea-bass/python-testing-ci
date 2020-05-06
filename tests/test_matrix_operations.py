@@ -1,3 +1,4 @@
+import pytest
 import numpy as np
 
 # Test Case: Will fail with exact comparison due to numerical error
@@ -20,13 +21,14 @@ def test_numpy_version():
     assert(np_ver == "1.17.0")
     print("Correct NumPy version found: " + np_ver)
 
-# def test_addition_exact():
-#     """
-#     Tests the addition of 2 matrices by exact comparison
-#     """
-#     actual = a + b
-#     assert((expected == actual).all())
-#     print("Matrices are exactly equal")
+@pytest.mark.skip(reason="Not using exact matrix comparison")
+def test_addition_exact():
+    """
+    Tests the addition of 2 matrices by exact comparison
+    """
+    actual = a + b
+    assert((expected == actual).all())
+    print("Matrices are exactly equal")
 
 def test_addition_close():
     """
