@@ -2,6 +2,15 @@ import numpy as np
 
 # Basic utilities package for matrix operations
 
+class SizeError(Exception):
+    """
+    Custom exception type raised due to a shape mismatch in addition.
+    We want to check that this specific type of exception is thrown 
+    when testing on invalid input.
+    """
+    pass
+
+
 def get_numpy_version():
     """
     Gets the NumPy version in the current Python environment
@@ -26,12 +35,3 @@ def add_matrices(a,b):
 
     # If you made it past all the errors, add the matrices
     return a + b
-
-
-class SizeError(Exception):
-    """
-    Custom exception type raised due to a shape mismatch in addition.
-    We want to check that this specific type of exception is thrown 
-    when testing on invalid input.
-    """
-    pass

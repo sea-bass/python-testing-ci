@@ -66,14 +66,14 @@ class TestMatrixTools:
         """
         Tests the shape mismatch exception handling
         """
+        # Define test inputs with mismatching shapes
         a = np.array([[1, 2],
-                    [3, 4]])
+                      [3, 4]])
         b = np.array([[0, 9, 8],
-                    [7, 6, 5],
-                    [4, 3, 2]])
+                      [7, 6, 5],
+                      [4, 3, 2]])
 
         # Run the test expecting a SizeError
         with pytest.raises(SizeError):
             output = add_matrices(a,b)
-
-        
+ 
