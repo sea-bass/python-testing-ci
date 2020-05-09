@@ -1,4 +1,5 @@
 attrs==19.3.0
+coverage==5.1
 entrypoints==0.3
 flake8==3.7.9
 flake8-html==0.4.0
@@ -18,6 +19,7 @@ pyflakes==2.1.1
 Pygments==2.6.1
 pyparsing==2.4.7
 pytest==5.4.1
+pytest-cov==2.8.1
 pytest-html==2.1.1
 pytest-metadata==1.8.0
 six==1.14.0

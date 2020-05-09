@@ -29,13 +29,6 @@ class TestMatrixTools:
                           [3,   4, 5],
                           [5,   5, 5]])
 
-    # Test Case 3: Will exercise shape mismatches
-    a3 = np.array([[1, 2],
-                   [3, 4]])
-    b3 = np.array([[0, 9, 8],
-                   [7, 6, 5],
-                   [4, 3, 2]])
-    expected3 = None
 
     # Define test methods
     def test_numpy_version(self):
@@ -45,6 +38,7 @@ class TestMatrixTools:
         np_ver = get_numpy_version()
         assert(np_ver == "1.17.0")
         print("Correct NumPy version found: " + np_ver)
+        
 
     @pytest.mark.skip(reason="Not using exact matrix comparison")
     @pytest.mark.parametrize("a,b,expected",[(a1,b1,expected1),(a2,b2,expected2)])
@@ -56,22 +50,30 @@ class TestMatrixTools:
         assert((expected == actual).all())
         print("Matrices are exactly equal")
 
-    @pytest.mark.parametrize("a,b,expected",[(a1,b1,expected1),(a2,b2,expected2),(a3,b3,expected3)])
+
+    @pytest.mark.parametrize("a,b,expected",[(a1,b1,expected1),(a2,b2,expected2)])
     def test_addition_close(self,a,b,expected):
         """
         Tests the addition of 2 matrices by checking if they are close within some tolerance
         """
 
-        # Try run the test
-        try:
-            actual = add_matrices(a,b)
-            assert(np.allclose(actual,expected,rtol=1e-05,atol=1e-08))
-            print("Matrices are equal within specified tolerance")
+        actual = add_matrices(a,b)
+        assert(np.allclose(actual,expected,rtol=1e-05,atol=1e-08))
+        print("Matrices are equal within specified tolerance")
 
-        # If there is an exception thrown of type SizeError, this is an expected failure.
-        # We will still pass the test and reprint it.
-        except SizeError as e:
-            print("Correctly found size exception:")
-            print(e.args[0])
+
+    def test_shape_mismatch(self):
+        """
+        Tests the shape mismatch exception handling
+        """
+        a = np.array([[1, 2],
+                    [3, 4]])
+        b = np.array([[0, 9, 8],
+                    [7, 6, 5],
+                    [4, 3, 2]])
+
+        # Run the test expecting a SizeError
+        with pytest.raises(SizeError):
+            output = add_matrices(a,b)
 
         

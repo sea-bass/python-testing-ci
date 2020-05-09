@@ -1,8 +1,13 @@
 # Folder names to ignore
-**/.virtualenvs/
+.virtualenvs/
 **/.pytest_cache/
 **/__pycache/
-**/flake-report/
+flake-report/
+coverage_results/
 
 # File types to ignore
 *.pyc
+
+# File names to ignore
+latest_test_results.*
+.coverage
