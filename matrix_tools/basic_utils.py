@@ -17,10 +17,10 @@ def add_matrices(a,b):
     # First, do some basic checks on shapes
     a_dim = len(a.shape)
     if a_dim != 2:
-        raise SizeError("Matrix a must be of size 2, got size {}".format(a_dim))
+        raise SizeError("Matrix a must be of dimension 2, got dimension {}".format(a_dim))
     b_dim = len(b.shape)
     if b_dim != 2:
-        raise SizeError("Matrix b must be of size 2, got size {}".format(b_dim))
+        raise SizeError("Matrix b must be of dimension 2, got dimension {}".format(b_dim))
     if not (a.shape == b.shape):
         raise SizeError("Matrices a {} and b {} must be of same size.".format(a.shape,b.shape))
 
