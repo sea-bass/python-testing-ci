@@ -1,2 +1,4 @@
+# pytest-cov configuration file
+# Skipping coverage on the test functions themselves
 [run]
 omit = matrix_tools/tests/*
