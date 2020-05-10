@@ -4,7 +4,7 @@ Sebastian Castro, 2020
 This repository shows a few examples of testing and continuous integration (CI) using Python. Testing is done using the [PyTest](https://docs.pytest.org/en/latest/) package. Then, we create a Docker image and integrate this into the [Jenkins](https://www.jenkins.io/) CI tool.
 
 Refer to the following blog posts for more information.
-* Post 1 on Flake8 and pytest -- COMING SOON
+* [Testing Python Code](https://roboticseabass.wordpress.com/2020/05/09/testing-python-code/)
 * Post 2 on Docker and Jenkins -- COMING SOON
 
 ## Setup

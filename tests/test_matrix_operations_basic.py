@@ -5,12 +5,12 @@ import numpy as np
 a = np.array([[0, 1, 2],
               [3, 4, 5],
               [6, 7, 8]])
-b = np.array([[3*0.1, 2,  3],
-              [0,     0,  0],
-              [-1,   -2, -3]])
-expected = np.array([[0.3, 3, 5],
-                     [3,   4, 5],
-                     [5,   5, 5]])
+b = np.array([[8, 7, 6],
+              [5, 4, 3],
+              [2, 1, 0]])
+expected = np.array([[8, 8, 8],
+                     [8, 8, 8],
+                     [8, 8, 8]])
 
 # Define test functions
 def test_numpy_version():
@@ -21,19 +21,11 @@ def test_numpy_version():
     assert(np_ver == "1.17.0")
     print("Correct NumPy version found: " + np_ver)
 
-@pytest.mark.skip(reason="Not using exact matrix comparison")
-def test_addition_exact():
+
+def test_addition():
     """
     Tests the addition of 2 matrices by exact comparison
     """
     actual = a + b
     assert((expected == actual).all())
     print("Matrices are exactly equal")
-
-def test_addition_close():
-    """
-    Tests the addition of 2 matrices by checking if they are close within some tolerance
-    """
-    actual = a + b
-    assert(np.allclose(actual,expected,rtol=1e-05,atol=1e-08))
-    print("Matrices are equal within specified tolerance")

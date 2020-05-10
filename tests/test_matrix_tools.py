@@ -7,25 +7,25 @@ from matrix_tools.basic_utils import get_numpy_version, add_matrices, SizeError
 class TestMatrixTools:
 
     # Define inputs and expected outputs
-    # Test Case 1: Will pass with exact comparison
-    a1 = np.array([[0, 1, 2],
+    # Test Case 0: Will pass with exact comparison
+    a0 = np.array([[0, 1, 2],
                    [3, 4, 5],
                    [6, 7, 8]])
-    b1 = np.array([[8, 7, 6],
+    b0 = np.array([[8, 7, 6],
                    [5, 4, 3],
                    [2, 1, 0]])
-    expected1 = np.array([[8, 8, 8],
+    expected0 = np.array([[8, 8, 8],
                           [8, 8, 8],
                           [8, 8, 8]])
 
-    # Test Case 2: Will fail with exact comparison due to numerical error
-    a2 = np.array([[0, 1, 2],
+    # Test Case 1: Will fail with exact comparison due to numerical error
+    a1 = np.array([[0, 1, 2],
                    [3, 4, 5],
                    [6, 7, 8]])
-    b2 = np.array([[3*0.1, 2,  3],
+    b1 = np.array([[3*0.1, 2,  3],
                    [0,     0,  0],
                    [-1,   -2, -3]])
-    expected2 = np.array([[0.3, 3, 5],
+    expected1 = np.array([[0.3, 3, 5],
                           [3,   4, 5],
                           [5,   5, 5]])
 
@@ -41,7 +41,7 @@ class TestMatrixTools:
         
 
     @pytest.mark.skip(reason="Not using exact matrix comparison")
-    @pytest.mark.parametrize("a,b,expected",[(a1,b1,expected1),(a2,b2,expected2)])
+    @pytest.mark.parametrize("a,b,expected",[(a0,b0,expected0),(a1,b1,expected1)])
     def test_addition_exact(self,a,b,expected):
         """
         Tests the addition of 2 matrices by exact comparison
@@ -51,7 +51,7 @@ class TestMatrixTools:
         print("Matrices are exactly equal")
 
 
-    @pytest.mark.parametrize("a,b,expected",[(a1,b1,expected1),(a2,b2,expected2)])
+    @pytest.mark.parametrize("a,b,expected",[(a0,b0,expected0),(a1,b1,expected1)])
     def test_addition_close(self,a,b,expected):
         """
         Tests the addition of 2 matrices by checking if they are close within some tolerance
