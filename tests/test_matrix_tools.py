@@ -40,7 +40,7 @@ class TestMatrixTools:
         print("Correct NumPy version found: " + np_ver)
         
 
-    # @pytest.mark.skip(reason="Not using exact matrix comparison")
+    @pytest.mark.skip(reason="Not using exact matrix comparison")
     @pytest.mark.parametrize("a,b,expected",[(a0,b0,expected0),(a1,b1,expected1)])
     def test_addition_exact(self,a,b,expected):
         """
