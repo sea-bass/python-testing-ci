@@ -5,7 +5,7 @@ This repository shows a few examples of testing and continuous integration (CI) 
 
 Refer to the following blog posts for more information.
 * [Testing Python Code](https://roboticseabass.wordpress.com/2020/05/09/testing-python-code/)
-* Post 2 on Docker and Jenkins -- COMING SOON
+* [Continuous Integration with GitHub, Docker, and Jenkins](https://roboticseabass.wordpress.com/2020/05/12/continuous-integration-with-github-docker-and-jenkins/)
 
 ## Setup
 ### Local Setup
