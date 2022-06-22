@@ -1,9 +1,9 @@
 # Define the base image
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 # Install required packages
 RUN apt-get update \
- && apt-get upgrade\
+ && apt-get upgrade -y \
  && apt-get install -y --no-install-recommends \
     python3 \
     python3-pip \
@@ -11,8 +11,6 @@ RUN apt-get update \
 
 # Copy this repo to a folder in the Docker container and set this as the working folder
 COPY . /app
-
-# Set the work directory
 WORKDIR /app
 
 # Install all the required packages

@@ -18,7 +18,7 @@ def test_numpy_version():
     Checks for the correct NumPy version as per specification
     """
     np_ver = np.__version__
-    assert(np_ver == "1.17.0")
+    assert(np_ver == "1.22.4")
     print("Correct NumPy version found: " + np_ver)
 
 
