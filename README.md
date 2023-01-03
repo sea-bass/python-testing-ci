@@ -1,5 +1,5 @@
 # Testing and Continuous Integration with Python
-Sebastian Castro, 2020-2022
+Sebastian Castro, 2020-2023
 
 This repository shows a few examples of testing and continuous integration (CI) using Python. Testing is done using the [PyTest](https://docs.pytest.org/en/latest/) package. Then, we create a [Docker](https://www.docker.com/) image and integrate this into the [Jenkins](https://www.jenkins.io/) CI tool.
 

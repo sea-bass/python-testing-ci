@@ -36,7 +36,7 @@ class TestMatrixTools:
         Checks for the correct NumPy version as per specification
         """
         np_ver = get_numpy_version()
-        assert(np_ver == "1.22.4")
+        assert(np_ver == "1.24.0")
         print("Correct NumPy version found: " + np_ver)
         
 
